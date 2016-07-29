@@ -1,0 +1,22 @@
+<form action='__CONTROLLER__/updategroups' method='post'>
+<input type="hidden" value="{$id}" name="id" />
+用户组名称：<input type="text" value="{$title}" name="title" /><br />
+权限列表：<br />
+<volist name="rules" id="vo">
+<input name="rules[]" type="checkbox" value="{$vo.id}" 
+<if condition="$vo.check eq 1"> checked="true"
+<else />
+</if>
+ />{$vo.title}:{$vo.name}<br />
+</volist> 
+<if condition="($status eq 1)">
+使用账号：<input type="radio" checked="checked" name="status" value="1" /><br />
+<else />使用账号：<input type="radio" name="status" value="1" /><br />
+</if>
+<if condition="($status eq 0)">
+禁用账号：<input type="radio" checked="checked" name="status" value="0" /><br />
+<else />禁用账号：<input type="radio" name="status" value="0" /><br />
+</if>
+<input type="submit" value="更改" />
+</form>
+<p>返回<a href="__CONTROLLER__/listgroup	">用户组列表</a></p>

@@ -1,0 +1,35 @@
+	<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>登陆</title>
+	<link rel="stylesheet" href="__ROOT__/Public/Css/comments.css" />
+<style type="text/css">
+body{background-image: url(__ROOT__/Public/Images/3.jpg);background-repeat: center;text-align:center;}
+ul{list-style:none}
+</style>
+	</head>
+	
+	<body>
+		<h1>登陆</h1>
+		<div class="Input_Box">
+		<form action="__CONTROLLER__/checkLogin" method="post">
+		<ul>
+			<li><input name="username" type="text" placeholder="登录名" /></li>
+			<li><input name="password" type="password" placeholder="密码"/></li>
+			<li>
+			<input name="verify" type="text" />
+			</li>
+			<img src="__CONTROLLER__/verify" alt="看不清请点击刷新" style="cursor : pointer;" onClick="show(this)" />
+		
+		</ul>
+		<button type="submit"  style="width:100px;height:50px">登陆</button
+		</form>
+		</div>
+		
+	<script>
+	function show(obj){
+	obj.src="__CONTROLLER__/verify/random/"+Math.random();}
+	</script>
+	</body>
+</html>

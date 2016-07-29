@@ -1,0 +1,27 @@
+<form action='__CONTROLLER__/updateusers' method='post'>
+<input type="hidden" value="{$id}" name="id" />
+昵称：<input type="text" value="{$nickname}" name="nickname" /><br />
+Email：<input type="text" value="{$email}" name="email" /><br />
+用户组列表：<br />
+<volist name="groups" id="vo">
+<input name="groups[]" type="checkbox" value="{$vo.id}" 
+<if condition="$vo.check eq 1"> checked="true"
+<else />
+</if>
+ />{$vo.title}<br />
+</volist> 
+<if condition="($status eq 1)">
+使用账号：<input type="radio" checked="checked" name="status" value="1" /><br />
+<else />使用账号：<input type="radio" name="status" value="1" /><br />
+</if>
+<if condition="($status eq 0)">
+禁用账号：<input type="radio" checked="checked" name="status" value="0" /><br />
+<else />禁用账号：<input type="radio" name="status" value="0" /><br />
+</if>
+不修改密码：<input type="radio" name="changep" checked="checked"  value="x" /><br />
+修改密码：<input type="radio" name="changep" value="y" /><br />
+新密码：<input type="password" name="password1" /><br />
+重复密码：<input type="password" name="password2" /><br />
+<input type="submit" value="更改" />
+</form>
+<p>返回<a href="__CONTROLLER__/listuser">用户列表</a></p>

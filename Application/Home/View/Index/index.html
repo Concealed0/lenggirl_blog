@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<!--
+
+
+我就是我，不一样的烟花
+	piu piu piu 干啥子
+		如来神掌 --  ---
+             -----
+ .======.         ***********啊啊啊啊啊啊
+              | INRI |
+              |      |
+              |      |
+     .========'      '========.
+     |   _      xxxx      _   |
+     |  /_;-.__ / _\  _.-;_\  |
+     |     `-._`'`_/'`.-'     |
+     '========.`\   /`========'
+              | |  / |
+              |/-.(  |
+              |\_._\ |
+              | \ \`;|
+              |  > |/|
+              | / // |
+              | |//  |
+              | \(\  |             
+              |  ``  |
+              |      |
+              |      |
+              |      |
+              |      |      是不是啊     不是~~~
+			  
+					……………………………………………………………………………………
+
+					　　　　　　！！！！！
+					　　　　　　 \\ - - //
+					　　　　　　 (-● ●-)
+					　　　　　　　\ (_) /
+					　　　　　　　 \ u /
+					┏oOOo-━━━━━━━━┓
+					┃　　　　　　　　　　 ┃
+					┃　　　要写什么呢！　　 ┃
+					┃不知道丫！！！┃
+					┃　　　　　　　　　　 ┃
+					┗━━━━━━━━-oOOo┛
+
+					……………………………………………………………………………………
+-->
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="initial-scale=1,minimum-scale=1" />
+	<link rel="stylesheet" href="__ROOT__/Public/Css/jinhan.css" />
+	<link rel="stylesheet" href="__ROOT__/Public/Css/comments.css" />
+	<title>孤独尼玛 | 卡哇伊神经大条博客 | ThinkPHP3.2.3驱动</title>
+</head>
+<body>
+	<div id="head">
+	<div class="nav left" >
+		<ul>
+			<li class="current"><a href="__APP__/">首页</a></li>
+			<foreach name='cate' item='vo' >
+			<li><a href="__CONTROLLER__/category?id={$vo.id}">{$vo.title}</a></li>
+			</foreach>
+			<p>说明：一只尼玛博客，哇哈哈</p>
+		</ul>
+	</div>
+	</div>
+	
+	<div id='body'>
+		<div id='main'>
+			<foreach name='paper' item='vo' >
+			<h2><a href="__CONTROLLER__/paper?pid={$vo.id}">{$vo.title}  </a></h2>
+			<p>
+			<span>创建于：{$vo.createtime} | 浏览： {$vo.view} times | author：{$vo.author} </span>
+			</p>
+			<p>
+			<span class='yao'>目录：<a href='__CONTROLLER__/category?id={$vo.cid}'>{$vo.cname}</a></span>
+			</p>
+			<hr />
+			</foreach>
+			<div class='pages '>{$page1}</div>
+		</div>
+		<div class='sider'>
+		<div id='root'>
+		<h1>我男神</h1><img src="__ROOT__/Public/Images/me.gif" >
+		</div>
+		
+<!--		<div class='comment'>   
+			<h1>七嘴八舌</h1>
+			<foreach name='comment' item='vo1' >
+			<div class='all'> {$vo1.createtime}：<span>“{$vo1.nickname}”</span>对 <a href='__CONTROLLER__/paper?pid={$vo1.pid}'>《{$vo1.pname}》</a> 吐槽：<br/> <span>“ {$vo1.content}”</span></div>
+			</foreach>
+			<div class='pages '>{$page2}</div>
+						<div class='Input_Box'>
+			<form action="__CONTROLLER__/addcomment" method="post">
+<input name='nickname' required="required" placeholder="NickName"></input><br />
+				<input name="email" required="required" placeholder="Email"></input><br />
+ <textarea id='textarea' name='comment' required="required" onKeyDown="textdown(event)" onKeyUp="textup()" onfocus="if(value=='限255字'){value=''}" onblur="if (value ==''){value='限255字'}">限255字</textarea>
+	           <input id='su' type="submit" value="吐槽男神">
+	         </form>
+	       </div>
+<-->
+<!-- UY BEGIN -->
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="main" data-title="manman" data-url="http://www.lenggirl.com"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"lenggirl"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+		</div>
+		</div>
+	</div>
+	
+	<div id='footer' class='clear'>
+		<div style="display: block;"  class="float-menu">
+        <ul class="list-nav" >
+            <li><a target="_self" class="list-nav-item current" onclick="goTop();return false" title="返回顶部" target="_self" href="#">一</a></li>
+            <li><a target="_self" class="list-nav-item current" onclick="goTop();return false" title="返回顶部" target="_self" href="#">只</a></li>
+            <li><a target="_self" class="list-nav-item current" onclick="goTop();return false" title="返回顶部" target="_self" href="#">尼</a></li>
+            <li><a target="_self" class="list-nav-item current" onclick="goTop();return false" title="返回顶部" target="_self" href="#">玛</a></li>
+        </ul>
+    	<p class="m-t5">
+        	<a class="btn-to-top" onclick="goTop();return false" title="返回顶部" target="_self" href="#">回顶部</a>
+    	</p>
+    	</div>
+    	
+		<div>
+		 <div class='me'>
+	       <h2>关于我</h2>
+			<p><a href="http://ei.lenggirl.com">毕业设计：中小企业智能系统</a></p>
+<p><a href="http://blog.lenggirl.com">大二写的小玩具</a></p>
+		   <p><a href='http://www.cnblogs.com/nima'>博客园</a>|<a href='/Public/home/index.html'>前端作品</a></p>
+		   <p><a href='hunterhug/Our Love Story.html'>心</a>|<a href='hunterhug/map.html'>地图查询</a></p>
+		   <p><a href='/Public/home/wang.html'>万年历</a></p>
+	      <p>我是一个喜欢学知识的人，只是因为学了计算机，发现很多东西要学。</p>
+	       <p>我用了一个星期，也可以说是五天，做出了至今为止第一个完整的博客。</p>
+	       <p>我会很多计算机语言，C,C++,Python,PHP,JAVA,HTML,CSS,JS,MATLAB。</p>
+	       <p>可是并没有卵用，并没有改变人类，呵呵。</p>
+	       <p>我之前学了一学期数学，我知道数学家，计算机科学家和哲学家</p>
+		   <p>从无到有创造东西真的很奇妙</p>
+		   <p>比如不知从哪里学会了写网站，然后莫名奇妙的</p>
+		   <p>晚上会突然做梦梦到学到很厉害的技术</p>
+		   <p>可是却很害怕，因为摸不到</p>
+		   <p>代码这种东西说来不复杂</p>
+		   <p>只是顺从人的逻辑，提取数据再插入数据</p>
+		   <p>自从得了精神病精神好多了</p>
+		   <p>Do you know that computer changed our life.</p>
+		   <p>All the things in the world can become a automachine </p>
+		   <p>Which is equel to a algorithm.</p>
+		   <p>Follows our thought and step by step.</p>
+		   <p>Then you don't know the bottom of the truth.</p>
+		   <p>So Gods bless you not lose yourselt.</p>
+		   <p>Just the world have never own such a strange object.</p>	       <p><a href="__ROOT__/admin">后台</a></p>
+	    </div>
+		<div>
+		<!--<img src="__ROOT__/Public/Images/logojin.jpg" style="max-width:80%"/>-->
+		<p>Power by <a href='http://weibo.com/hunterhug'>一只尼玛</a> @2015 原型已完毕 等待其他功能 QQ:569929309</p>
+		<p>今天天气真好！我只想做名安静的美男子~~欧米</p>
+		</div>
+		</div>
+	</div>
+    
+    <div>		  <img style="max-width:80%" src="__ROOT__/Public/Images/wei.jpg" alt="漆黑的子弹"/></div>
+	<script type="text/javascript">    
+function textdown(e) {
+    textevent = e;
+    if (textevent.keyCode == 8) {
+        return;
+    }
+    if (document.getElementById('textarea').value.length >= 254) {
+        alert("大侠，手下留情，此处限字255")
+        if (!document.all) {
+            textevent.preventDefault();
+        } else {
+            textevent.returnValue = false;
+        }
+    }
+}
+function textup() {
+    var s = document.getElementById('textarea').value;
+    //判断ID为text的文本区域字数是否超过100个 
+    if (s.length > 100) {
+        document.getElementById('textarea').value = s.substring(0, 254);
+    }
+}
+</script>   
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>规则管理</title>
+<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Others/default/easyui.css" />
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Others/icon.css" />
+	<link rel="stylesheet" type="text/css" href="__ROOT__/Public/Css/demo.css" />
+	<script  src="__ROOT__/Public/Js/jquery-1.11.2.min.js"></script>
+	<script  src="__ROOT__/Public/Js/jquery.easyui.min.js"></script>
+</head>
+<script type="text/javascript">
+function destroyUser(){
+	var row = $('#dg').datagrid('getSelected');
+	if (row){
+		$.messager.confirm('Confirm','Are you sure you want to destroy this user?',function(r){
+			if (r){
+				var uri="__CONTROLLER__/deleterule";
+				$.post(uri,{'id':row.id},function(result){
+						$.messager.show({	// show error message
+							title: '消息',
+							msg: result
+						});
+						$('#dg').datagrid('reload');	// reload the user da
+				});
+			}
+		});
+	}else{
+	alert("请勾选按钮")}
+}
+
+function add(){
+		var row = $('#dg').datagrid('getSelected');
+		if (row){
+			window.location.href="__CONTROLLER__/updaterule?id="+row.id; 
+		}else{
+		alert("请勾选按钮")}
+		}
+		
+</script>
+</head>
+<body>
+<!-- 	<table id="userTable"></table>   -->
+  	<table id="dg" title="规则管理" class="easyui-datagrid" style="width:550px;height:250px"
+		url="__CONTROLLER__/listrules" 
+		toolbar="#toolbar" rownumbers="true" fitColumns="true" singleSelect="true"  pagination="true"
+		    pageList="[5,10,30]" fit="true">
+	<thead>
+		<tr>
+			<th field='ck' checkbox="true"></th>
+			<th field='id'  width="100">规则ID</th>
+			<th field='name' width="100">规则</th>
+			<th field='title'  >规则名称</th>
+			<th field='status' >状态</th>
+			<th field='condition'  width="100" align='right'>条件</th>
+		</tr>
+	</thead>
+</table>
+<div id="toolbar">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="add()">编辑规则</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">删除规则</a>
+	<a href="__CONTROLLER__/addrule"  iconCls="icon-remove" plain="true" > 增加规则</a>
+</div>
+<div id="dlg-buttons">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">Save</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">Cancel</a>
+</div>
+</body>
+</html>

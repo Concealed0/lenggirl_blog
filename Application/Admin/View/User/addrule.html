@@ -1,0 +1,9 @@
+<form action='__CONTROLLER__/addrules' method='post'>
+规则：<input type="text"  name="name" /><br />
+规则名称：<input type="text"  name="title" /><br />
+条件：<input type="text"  name="condition" /><br />
+使用规则：<input type="radio" checked="checked" name="status" value="1" /><br />
+禁用规则：<input type="radio" name="status" value="0" /><br />
+<input type="submit" value="增加" />
+</form>
+<p>返回<a href="__CONTROLLER__/listrule">规则列表</a></p>

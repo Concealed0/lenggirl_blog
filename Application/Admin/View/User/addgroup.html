@@ -1,0 +1,11 @@
+<form action='__CONTROLLER__/addgroups' method='post'>
+用户组名称：<input type="text" name="title" /><br />
+权限列表：<br />
+<volist name="rules" id="vo">
+<input name="rules[]" type="checkbox" value="{$vo.id}" />{$vo.title}:{$vo.name}<br />
+</volist> 
+使用该组：<input type="radio" checked="checked" name="status" value="1" /><br />
+禁用该组：<input type="radio" name="status" value="0" /><br />
+<input type="submit" value="添加" />
+</form>
+<p>返回<a href="__CONTROLLER__/listgroup	">用户组列表</a></p>

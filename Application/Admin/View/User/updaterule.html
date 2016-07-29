@@ -1,0 +1,16 @@
+<form action='__CONTROLLER__/updaterules' method='post'>
+<input type="hidden" value="{$id}" name="id" />
+规则：<input type="text" value="{$name}" name="name" /><br />
+规则名称：<input type="text" value="{$title}" name="title" /><br />
+条件：<input type="text" value="{$condition}" name="condition" /><br />
+<if condition="($status eq 1)">
+使用账号：<input type="radio" checked="checked" name="status" value="1" /><br />
+<else />使用账号：<input type="radio" name="status" value="1" /><br />
+</if>
+<if condition="($status eq 0)">
+禁用账号：<input type="radio" checked="checked" name="status" value="0" /><br />
+<else />禁用账号：<input type="radio" name="status" value="0" /><br />
+</if>
+<input type="submit" value="更改" />
+</form>
+<p>返回<a href="__CONTROLLER__/listrule">规则列表</a></p>

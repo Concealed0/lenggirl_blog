@@ -1,0 +1,11 @@
+<form action='__CONTROLLER__/addusers' method='post'>
+用户名：<input type="text"  name="username" /><br />
+昵称：<input type="text"  name="nickname" /><br />
+Email：<input type="text" name="email"  /><br />
+使用账号：<input type="radio" checked="checked" name="status" value="1" /><br />
+禁用账号：<input type="radio" name="status" value="0" /><br />
+密码：<input type="password" name="password1" /><br />
+重复密码：<input type="password" name="password2" /><br />
+<input type="submit" value="添加" />
+</form>
+<p>返回<a href="__CONTROLLER__/listuser">用户列表</a></p>
