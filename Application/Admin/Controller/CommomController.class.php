@@ -3,7 +3,7 @@
  * 权限继承控制表
  * 时间：2015.8.24
  * author:一只尼玛
- * www.lenggirl.com
+ * php.lenggirl.com
 ·*/
 namespace Admin\Controller;
 use Think\Controller;

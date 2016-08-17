@@ -3,7 +3,7 @@
  * 公共控制表，不需权限
  * 时间：2015.8.24
  * author:一只尼玛
- * www.lenggirl.com
+ * php.lenggirl.com
 ·*/
 namespace Admin\Controller;
 use Think\Controller;
